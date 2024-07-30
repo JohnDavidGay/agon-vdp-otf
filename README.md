@@ -1,3 +1,8 @@
+# Pingo Extentions
+
+This will be my attempt at extending and hacking the Pingo extensions, based on [TurboVegas](https://github.com/TurboVega/agon-vdp-otf/tree/pingo3D)
+Please be kind as I don't really know programming that well. And even less about using GitHub. So this might not get beyond the fork stage.
+
 # agon-vdp
 
 Part of the official firmware for the [Agon Console8](https://www.heber.co.uk/agon-console8)
