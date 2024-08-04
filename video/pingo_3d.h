@@ -200,10 +200,10 @@ typedef struct tag_Pingo3dControl {
         switch (subcmd) {
             case 1: define_mesh_vertices(); break;
             case 2: set_mesh_vertex_indexes(); break;
-            case 3: define_mesh_texture_coordinates(); break;
+            case 3: define_texture_coordinates(); break; // Remove mesh
             case 4: set_texture_coordinate_indexes(); break;
             case 5: create_object(); break;
-            case 40: define_object_texture_coordinates(); break;
+          //  case 40: define_object_texture_coordinates(); break; //
             case 6: set_object_x_scale_factor(); break;
             case 7: set_object_y_scale_factor(); break;
             case 8: set_object_z_scale_factor(); break;
@@ -345,8 +345,8 @@ typedef struct tag_Pingo3dControl {
         }
     }
 
-    // VDU 23, 0, &A0, sid; &48, 3, mid; n; u0; v0; ... :  Define Mesh Texture Coordinates
-    void define_mesh_texture_coordinates() {
+    // VDU 23, 0, &A0, sid; &48, 3, oid; n; u0; v0; ... :  Define Texture Coordinates
+    void define_texture_coordinates() {
         auto mesh = get_mesh();
         if (mesh->textCoord) {
             heap_caps_free(mesh->textCoord);
@@ -374,7 +374,7 @@ typedef struct tag_Pingo3dControl {
         }
     }
 
-    // VDU 23, 0, &A0, sid; &48, 40, oid; n; u0; v0; ... :  Define Object Texture Coordinates
+/*    // VDU 23, 0, &A0, sid; &48, 40, oid; n; u0; v0; ... :  Define Object Texture Coordinates
     void define_object_texture_coordinates() {
         auto object = get_object();
         if (object->m_object.textCoord) {
@@ -402,7 +402,7 @@ typedef struct tag_Pingo3dControl {
             }
         }
     }
-
+*/
     // VDU 23, 0, &A0, sid; &48, 4, mid; n; i0; ... :  Set Texture Coordinate Indexes
     void set_texture_coordinate_indexes() {
         auto mesh = get_mesh();
